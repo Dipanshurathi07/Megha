@@ -65,7 +65,7 @@ app.extensions["supabase"] = supabase_client
 
 @app.get("/")
 def home():
-    return send_from_directory(app.root_path, PAGES["home"])
+    return send_from_directory(app.root_path, "welcome.html")
 
 
 @app.get("/<page>")

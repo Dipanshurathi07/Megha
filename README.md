@@ -2,6 +2,8 @@
 
 A small Flask website with a private, shared photo/video scrapbook. Album media is stored in a private Supabase Storage bucket, not in browser-local storage.
 
+The site opens on a video hello for Megha at `/`. The original multi-page love menu remains at `/home`; the looping intro video is bundled at `static/videos/megha-miss-you.mp4`.
+
 ## Configure Supabase
 
 The scrapbook keeps its existing Supabase Auth, browser client, `album_members` and `album_memories` tables, `couple-album` private Storage bucket, RLS policies, and realtime subscription. Flask loads the Supabase URL and publishable/anon key from environment variables, initializes the Python Supabase client, and serves those public client settings to the scrapbook. The browser client continues to handle user sign-in, RLS-protected album operations, and realtime updates. A publishable/anon key is designed to be visible in a browser; the app rejects secret and service-role keys and never sends them to the frontend.
@@ -24,6 +26,14 @@ The scrapbook keeps its existing Supabase Auth, browser client, `album_members` 
 7. For Vercel, set `SUPABASE_URL` and `SUPABASE_KEY` in **Project Settings → Environment Variables** using the Project URL and publishable/anon key, then import/deploy this repository. Do not add a service-role or secret key. `vercel.json` continues to route requests through the existing Flask app. Set the live site URL as Supabase's **Site URL**, and add it plus `http://localhost:8000/**` under **Authentication → URL Configuration → Redirect URLs**.
 
 Every album table and storage operation is protected by the two-user `album_members` allow-list. Media is in a private bucket; the browser displays temporary signed URLs. The original scrapbook images in `static/photos/` are part of the website and are public website assets.
+
+If loading, uploading, or deleting memories shows `permission denied for table album_memories`, run these grants in the Supabase SQL Editor (the existing RLS policies still restrict rows to album members):
+
+```sql
+grant usage on schema public to authenticated;
+grant select on public.album_members to authenticated;
+grant select, insert, delete on public.album_memories to authenticated;
+```
 
 ## Run and test locally
 

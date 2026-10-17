@@ -71,6 +71,29 @@ a:focus-visible, button:focus-visible { outline: 3px solid #d88c98; outline-offs
 .spark-b { right: 17%; bottom: 185px; color: #d5985f; font-size: 21px; }
 .art-heart { top: 179px; right: 17%; font-family: Georgia, serif; font-size: 32px; transform: rotate(12deg); }
 .hero-photo-art { min-height: 430px; overflow: hidden; border-radius: 35px 35px 65px 35px; background: radial-gradient(ellipse at 30% 20%, #f9ddca, transparent 55%), linear-gradient(145deg, #f3dfd6, #fbebe6 60%, #f1dcd9); }
+.welcome-page { min-height: 100svh; overflow: hidden; color: #fffaf8; background: #24151d; }
+.welcome-screen { position: relative; min-height: 100svh; min-height: 100dvh; display: grid; place-items: center; isolation: isolate; overflow: hidden; padding: 30px 20px; background: #24151d; }
+.welcome-video, .welcome-scrim { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; }
+.welcome-video { object-fit: cover; object-position: center 44%; }
+.welcome-scrim { z-index: -1; background: linear-gradient(180deg, rgb(25 14 22 / 34%), rgb(29 13 22 / 43%) 43%, rgb(23 12 18 / 76%)); }
+.welcome-message { width: min(100%, 540px); padding: 36px 30px; text-align: center; animation: welcome-arrive .9s both; }
+.welcome-eyebrow { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0; color: rgb(255 246 243 / 83%); font-size: 10px; font-weight: 700; letter-spacing: .25em; }
+.welcome-eyebrow i { color: #ff9dad; font-size: 14px; font-style: normal; }
+.welcome-heart { margin-top: 36px; font-size: 35px; filter: drop-shadow(0 5px 15px rgb(255 119 151 / 35%)); animation: welcome-heartbeat 1.8s ease-in-out infinite; }
+.welcome-message h1 { margin: 12px 0 17px; font-family: "Playfair Display", Georgia, serif; font-size: clamp(57px, 10vw, 92px); font-weight: 500; line-height: .98; letter-spacing: -.055em; text-shadow: 0 4px 26px rgb(0 0 0 / 20%); }
+.welcome-message h1 em { color: #ffb0ba; font-weight: 500; }
+.welcome-note { margin: 0; color: rgb(255 248 246 / 94%); font-size: clamp(14px, 2.4vw, 17px); line-height: 1.85; text-shadow: 0 2px 14px rgb(0 0 0 / 30%); }
+.welcome-enter { min-height: 49px; display: inline-flex; align-items: center; justify-content: center; gap: 11px; margin-top: 30px; padding: 0 23px; border: 1px solid rgb(255 255 255 / 42%); border-radius: 999px; color: #57313b; background: #fff8f4; box-shadow: 0 10px 35px rgb(20 8 16 / 22%); font-size: 12px; font-weight: 700; transition: transform .2s, background .2s, box-shadow .2s; }
+.welcome-enter:hover { transform: translateY(-3px); background: #fff; box-shadow: 0 14px 40px rgb(20 8 16 / 30%); }
+.welcome-enter span { color: var(--rose); font-size: 17px; }
+.welcome-signoff { margin: 20px 0 0; color: rgb(255 239 235 / 81%); font-family: "Playfair Display", Georgia, serif; font-size: 12px; font-style: italic; }
+.welcome-video-note { position: absolute; right: 22px; bottom: 19px; color: rgb(255 247 244 / 71%); font-size: 9px; letter-spacing: .08em; }
+.welcome-sparkles span { position: absolute; color: rgb(255 218 221 / 86%); font-size: 25px; pointer-events: none; animation: welcome-float 5s ease-in-out infinite; }
+.welcome-sparkles span:nth-child(1) { top: 20%; left: 16%; }
+.welcome-sparkles span:nth-child(2) { top: 29%; right: 19%; animation-delay: -1.3s; font-size: 20px; }
+.welcome-sparkles span:nth-child(3) { right: 14%; bottom: 22%; animation-delay: -2.7s; font-size: 21px; }
+.welcome-sparkles span:nth-child(4) { bottom: 20%; left: 17%; animation-delay: -3.6s; font-size: 18px; }
+.welcome-sparkles span:nth-child(5) { top: 15%; right: 35%; animation-delay: -2s; font-size: 15px; }
 .photo-polaroid { position: absolute; margin: 0; padding: 8px 8px 32px; border: 1px solid #f0e4d8; border-radius: 3px; background: #fffdfa; box-shadow: 0 12px 35px rgb(77 52 43 / 18%); }
 .photo-polaroid img { width: 100%; height: 100%; display: block; border-radius: 2px; object-fit: cover; }
 .photo-polaroid figcaption { position: absolute; right: 7px; bottom: 9px; left: 7px; overflow: hidden; color: #745e53; font-family: "Playfair Display", Georgia, serif; font-size: 10px; font-style: italic; text-align: center; text-overflow: ellipsis; white-space: nowrap; }
@@ -450,6 +473,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid #d88c98; outline-offs
 @keyframes gift-photo-right { from { transform: translateX(38px) rotate(9deg); } to { transform: translateX(0) rotate(5deg); } }
 @keyframes gift-heart-pulse { 0%, 100% { transform: scale(1); } 48% { transform: scale(1.22); } }
 @keyframes gift-petal-rise { 0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0deg); } 16% { opacity: .9; } 100% { opacity: 0; transform: translate3d(0, -270px, 0) rotate(250deg); } }
+@keyframes welcome-arrive { from { opacity: 0; transform: translateY(17px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes welcome-heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+@keyframes welcome-float { 0%, 100% { opacity: .5; transform: translateY(0) rotate(-8deg); } 50% { opacity: 1; transform: translateY(-13px) rotate(8deg); } }
 
 @media (min-width: 1400px) {
   .home-hero { min-height: 550px; }
@@ -468,8 +494,24 @@ a:focus-visible, button:focus-visible { outline: 3px solid #d88c98; outline-offs
 }
 @media (max-width: 600px) {
   body { background: #fff9f5; }
+  .welcome-screen { padding: 18px 12px; }
+  .welcome-video { object-position: center; }
+  .welcome-message { padding: 30px 14px; }
+  .welcome-heart { margin-top: 29px; font-size: 31px; }
+  .welcome-message h1 { margin-top: 11px; font-size: clamp(56px, 16vw, 78px); }
+  .welcome-note { font-size: 13px; }
+  .welcome-enter { min-height: 46px; margin-top: 24px; padding: 0 18px; font-size: 11px; }
+  .welcome-signoff { margin-top: 16px; font-size: 11px; }
+  .welcome-video-note { right: 12px; bottom: 11px; font-size: 8px; }
+  .welcome-sparkles span:nth-child(1) { top: 16%; left: 7%; }
+  .welcome-sparkles span:nth-child(2) { top: 22%; right: 7%; }
+  .welcome-sparkles span:nth-child(3) { right: 6%; bottom: 17%; }
+  .welcome-sparkles span:nth-child(4) { bottom: 18%; left: 7%; }
   .site-header { width: calc(100% - 32px); min-height: 76px; gap: 7px; }
-  .brand { gap: 7px; font-size: 11px; }
+  .brand { gap: 7px; font-size: 11px;   }
+  @media (prefers-reduced-motion: reduce) {
+    .welcome-message, .welcome-heart, .welcome-sparkles span { animation: none; }
+  }
   .brand-mark { width: 30px; height: 30px; font-size: 17px; }
   .header-pill { padding: 8px 11px; font-size: 9px; }
   .site-nav { gap: 21px; margin: 1px 0 0; }
