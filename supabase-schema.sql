@@ -13,20 +13,6 @@ create table if not exists public.album_memories (
   created_at timestamptz not null default now()
 );
 
-do $$
-begin
-  if not exists (
-    select 1
-    from pg_publication_tables
-    where pubname = 'supabase_realtime'
-      and schemaname = 'public'
-      and tablename = 'album_memories'
-  ) then
-    alter publication supabase_realtime add table public.album_memories;
-  end if;
-end
-$$;
-
 alter table public.album_members enable row level security;
 alter table public.album_memories enable row level security;
 
