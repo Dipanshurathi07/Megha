@@ -15,7 +15,7 @@ A small Flask website with a private, shared photo/video scrapbook. Album media 
      ('MEGHA_AUTH_USER_UUID', 'Megha');
    ```
 
-5. Edit `static/supabase-config.js`. Set `supabaseUrl` to the Supabase **Project URL** and `supabaseAnonKey` to the **publishable/anon key**. This key is intended for browser apps; **never put a `service_role` or secret key in this file**. The publishable/anon key is safe to deploy because SQL policies restrict the album to the two invited account IDs.
+5. Set `supabaseUrl` and `supabaseAnonKey` in `static/supabase-config.js` to your Supabase **Project URL** and **publishable/anon key**. The website's browser-side album reads this JS config; a `.env` file is not automatically read by the frontend. The publishable key is intended for browser apps; **never put a `service_role` or secret key in this file**. SQL policies restrict the album to the two invited account IDs.
 6. Run locally with `.\.venv\Scripts\python.exe app.py`, open `/memories`, and sign in with both accounts to test. Upload up to 10 JPG, PNG, WEBP, GIF, MP4, WEBM, or MOV files per batch (maximum 25 MB each). Both invited members can view and delete shared memories.
 7. To share it between Delhi and Kolkata, commit the configured `static/supabase-config.js`, push the changes to GitHub, then import this repository into Vercel and deploy. `vercel.json` routes page requests to the Flask app; static assets remain served by Vercel. Set the live site URL as Supabase's **Site URL**, and add it plus `http://localhost:8000/**` under **Authentication → URL Configuration → Redirect URLs**.
 

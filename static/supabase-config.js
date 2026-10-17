@@ -1,4 +1,4 @@
 window.MEGHA_ALBUM_CONFIG = {
-  supabaseUrl: "https://YOUR_PROJECT_ID.supabase.co",
-  supabaseAnonKey: "YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY"
+  supabaseUrl: "https://xncjdvvlfpoykmizsvxr.supabase.co",
+  supabaseAnonKey: "sb_publishable_NQKFIdEyjv-ozgmV8lpVGQ_-Y9_Ln48"
 };
