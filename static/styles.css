@@ -165,6 +165,49 @@ a:focus-visible, button:focus-visible { outline: 3px solid #d88c98; outline-offs
 .gallery-photo figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 29px 13px 12px; display: grid; gap: 4px; color: white; background: linear-gradient(transparent, rgb(34 26 24 / 75%)); }
 .gallery-photo figcaption span { font-size: 7px; font-weight: 700; letter-spacing: .15em; }
 .gallery-photo figcaption strong { font-family: "Playfair Display", Georgia, serif; font-size: 15px; font-weight: 500; }
+.shared-album { margin: 25px 0 26px; padding: clamp(18px, 4vw, 29px); border: 1px solid #efdfd8; border-radius: 18px; background: radial-gradient(ellipse at 100% 0, #fff1ed 0, transparent 38%), #fffdfa; box-shadow: var(--shadow); }
+.shared-album-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 17px; }
+.shared-album-heading h2 { margin: 6px 0; font-family: "Playfair Display", Georgia, serif; font-size: clamp(23px, 4vw, 32px); font-weight: 500; }
+.shared-album-heading h2 em { color: var(--rose); font-weight: 500; }
+.shared-album-heading > div > p:last-child { max-width: 560px; margin: 0; color: #8e7972; font-size: 10px; line-height: 1.8; }
+.shared-album-stamp { width: 55px; height: 55px; display: grid; flex: 0 0 55px; place-items: center; border: 1px solid #efded7; border-radius: 50%; color: var(--rose-dark); background: #fff7f2; font-family: "Playfair Display", Georgia, serif; font-size: 12px; transform: rotate(-9deg); }
+.album-auth-card { max-width: 470px; margin: 17px auto 0; padding: 19px; border: 1px solid #f0e3dc; border-radius: 14px; background: rgb(255 253 250 / 86%); }
+.album-auth-card[hidden], .album-private-area[hidden] { display: none; }
+.album-auth-card h3, .album-items-heading h3 { margin: 0; font-family: "Playfair Display", Georgia, serif; font-size: 21px; font-weight: 500; }
+.album-auth-copy { margin: 7px 0 13px; color: #8b7770; font-size: 9px; line-height: 1.8; }
+.album-login-form { display: grid; gap: 10px; }
+.album-login-form label, .album-caption-label { display: grid; gap: 5px; color: #725e55; font-size: 9px; font-weight: 700; }
+.album-login-form input, .album-caption-label input { width: 100%; min-height: 40px; padding: 9px 11px; border: 1px solid #eaddd6; border-radius: 9px; color: #574740; background: #fffdfa; font: inherit; font-size: 10px; }
+.album-login-form input:focus, .album-caption-label input:focus { outline: 2px solid #d88c98; outline-offset: 2px; }
+.album-login-form .button { justify-self: start; margin-top: 2px; }
+.album-auth-status, .album-upload-status { min-height: 15px; margin: 10px 0 0; color: #9b8176; font-size: 9px; line-height: 1.7; overflow-wrap: anywhere; }
+.album-auth-status.is-error, .album-upload-status.is-error { color: #a9404c; }
+.album-private-area { margin-top: 17px; }
+.album-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 13px; }
+.album-toolbar > p { margin: 0; color: #806b62; font-size: 9px; overflow-wrap: anywhere; }
+.album-toolbar > div { display: flex; flex-wrap: wrap; gap: 7px; }
+.album-toolbar .button { min-height: 35px; padding: 0 11px; font-size: 9px; }
+.album-upload-form { padding: 16px; border: 1px dashed #e7c9bf; border-radius: 13px; background: #fff8f3; }
+.album-file-picker { min-height: 44px; display: grid; place-items: center; position: relative; border: 1px solid #eddbd4; border-radius: 10px; color: var(--rose-dark); background: #fffdfa; font-size: 10px; font-weight: 700; cursor: pointer; }
+.album-file-picker input { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; }
+.album-file-picker:focus-within { outline: 3px solid #d88c98; outline-offset: 3px; }
+.album-file-picker span { padding: 9px 12px; text-align: center; }
+.album-file-help { margin: 7px 0 12px; color: #9a877e; font-size: 8px; line-height: 1.7; }
+.album-caption-label { margin-bottom: 11px; }
+.album-upload-form > .button { min-height: 38px; }
+.album-items-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 19px 0 11px; }
+.album-items-heading h3 { font-size: 22px; }
+.album-items-heading > span { color: #99847a; font-size: 9px; }
+.shared-album-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; }
+.album-memory-card { min-width: 0; overflow: hidden; border: 1px solid #eee1da; border-radius: 12px; background: #fffdfa; }
+.album-memory-media { width: 100%; aspect-ratio: 4 / 3; display: block; object-fit: cover; background: #f6ece7; }
+.album-memory-details { padding: 10px; }
+.album-memory-caption { min-height: 29px; margin: 0 0 6px; color: #69574f; font-family: "Playfair Display", Georgia, serif; font-size: 11px; line-height: 1.5; overflow-wrap: anywhere; }
+.album-memory-date { display: block; color: #a18c82; font-size: 8px; }
+.album-delete-button { margin-top: 9px; padding: 6px 9px; border: 1px solid #eed9d4; border-radius: 99px; color: #a34f5b; background: #fff8f5; font-size: 8px; font-weight: 700; cursor: pointer; }
+.album-delete-button:disabled, .album-toolbar button:disabled, .album-upload-form button:disabled { opacity: .6; cursor: wait; }
+.album-empty { margin: 0; padding: 17px 12px; border: 1px dashed #ebdcd5; border-radius: 11px; color: #927e74; font-family: "Playfair Display", Georgia, serif; font-size: 12px; font-style: italic; text-align: center; }
+.album-empty[hidden] { display: none; }
 
 .reasons-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 23px; align-items: stretch; }
 .reasons-note { padding: 26px; border: 1px solid #f0e0d8; border-radius: 16px; background: #fcf0ec; }
@@ -503,6 +546,17 @@ a:focus-visible, button:focus-visible { outline: 3px solid #d88c98; outline-offs
   .letter-body { font-size: 11px; }
   .scrapbook-grid { grid-template-columns: 1fr; gap: 10px; }
   .photo-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 230px 200px; gap: 9px; }
+  .shared-album { margin: 18px 0 21px; padding: 17px 13px; border-radius: 15px; }
+  .shared-album-heading { align-items: flex-start; gap: 8px; }
+  .shared-album-stamp { width: 42px; height: 42px; flex-basis: 42px; font-size: 10px; }
+  .shared-album-heading > div > p:last-child { font-size: 9px; }
+  .album-auth-card { padding: 15px 12px; }
+  .album-toolbar { align-items: flex-start; flex-direction: column; }
+  .album-toolbar > div { width: 100%; }
+  .album-toolbar .button { flex: 1; }
+  .album-upload-form { padding: 12px; }
+  .shared-album-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .album-memory-details { padding: 8px; }
   .gallery-wide { grid-column: 1 / -1; }
   .gallery-photo { border-radius: 12px; }
   .gallery-photo figcaption { padding: 24px 9px 9px; }

@@ -27,6 +27,35 @@
         <figcaption><span>SENDING A LITTLE HELLO</span><strong>Your Delhi wala misses you. 💌</strong></figcaption>
       </figure>
     </section>
+    <section class="shared-album" id="shared-album" aria-labelledby="shared-album-heading">
+      <div class="shared-album-heading">
+        <div><p class="eyebrow">OUR PRIVATE LITTLE CORNER</p><h2 id="shared-album-heading">Add to our <em>shared album.</em> 📸</h2><p>Upload a photo or video from either city; once you're signed in, it appears here for both of us. Only our two invited accounts can open this album. 🤍</p></div>
+        <span class="shared-album-stamp" aria-hidden="true">D ↔ K</span>
+      </div>
+      <section class="album-auth-card" id="album-auth-card" aria-labelledby="album-login-heading">
+        <h3 id="album-login-heading">Our scrapbook is private 🔒</h3>
+        <p class="album-auth-copy" id="album-auth-copy">Sign in with the email and password set up for you. Both accounts must be invited to the private album.</p>
+        <form id="album-login-form" class="album-login-form">
+          <label>Email<input id="album-email" name="email" type="email" autocomplete="username" required maxlength="254" placeholder="you@example.com"></label>
+          <label>Password<input id="album-password" name="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128" placeholder="Your private album password"></label>
+          <button class="button button-primary" type="submit" id="album-login-button">Sign in to our album <span>🔐</span></button>
+        </form>
+        <p class="album-auth-status" id="album-auth-status" role="status" aria-live="polite">Your photos stay in a private cloud bucket. Please don't share your password or project secret keys.</p>
+      </section>
+      <section class="album-private-area" id="album-private-area" hidden>
+        <div class="album-toolbar"><p id="album-signed-in-as"></p><div><button class="button button-outline" id="album-refresh" type="button">Refresh <span>↻</span></button><button class="button button-outline" id="album-sign-out" type="button">Sign out <span>↗</span></button></div></div>
+        <form class="album-upload-form" id="album-upload-form">
+          <label class="album-file-picker">Choose photos or videos<input id="album-files" name="files" type="file" accept="image/jpeg,image/png,image/webp,image/gif,video/mp4,video/webm,video/quicktime" multiple required><span>📷 Add files from this device</span></label>
+          <p class="album-file-help">Up to 10 files at a time · 25 MB each · JPG, PNG, WEBP, GIF, MP4, WEBM or MOV</p>
+          <label class="album-caption-label" for="album-caption">A little caption (optional)<input id="album-caption" name="caption" type="text" maxlength="180" placeholder="The day we laughed about…"></label>
+          <button class="button button-primary" id="album-upload-button" type="submit">Add to our album <span>♡</span></button>
+          <p class="album-upload-status" id="album-upload-status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="album-items-heading"><h3>Our shared moments</h3><span id="album-item-count">Loading…</span></div>
+        <div class="shared-album-grid" id="shared-album-grid" aria-live="polite"></div>
+        <p class="album-empty" id="album-empty" hidden>No shared photos yet. Add the first little memory from your city. ♡</p>
+      </section>
+    </section>
     <div class="scrapbook-grid">
       <article class="memory-card memory-peach"><span class="memory-number">KOLKATA'S BEST VIEW</span><span class="memory-doodle">👀</span><h2>Your eyes.</h2><p>One look from you and Delhi suddenly feels a little closer.</p><span class="memory-sticker">my favourite view ♡</span></article>
       <article class="memory-card memory-pink"><span class="memory-number">HR MADAM, PLEASE NOTE</span><span class="memory-doodle">📋</span><h2>You're the boss.</h2><p>At work, full HR energy. With me, cute softie. Case closed.</p><span class="memory-sticker">approved ✅</span></article>
@@ -36,5 +65,8 @@
     <section class="memory-bottom"><span>✿</span><p>More pages to add, more moments to make.<br><em>The best parts of our story are still ahead.</em></p><span>✿</span></section>
     <footer class="site-footer"><span>Made with a ridiculous amount of love <b>♡</b></span><a href="/">A little corner for Megha Sinha</a></footer>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/static/supabase-config.js"></script>
+  <script src="/static/album.js" defer></script>
 </body>
 </html>
