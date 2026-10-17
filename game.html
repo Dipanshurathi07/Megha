@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8f4">
+  <meta name="description" content="Two cute, long-distance games for Megha, with love from Delhi.">
+  <title>Delhi–Kolkata love games 🎮</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="/"><span class="brand-mark">m.</span><span>for Megha, <em>with love</em></span></a><nav class="site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/love">Love note</a><a href="/memories">Our scrapbook</a><a class="active" href="/game">Play a game</a><a href="/promise">For tough days</a><a href="/reasons">Reasons why</a><a href="/rate">Rate me</a><a href="/quiz">Love quiz</a><a href="/surprise">Surprise</a></nav><a class="header-pill" href="/question">A question <span>↗</span></a></header>
+  <main class="inner-page games-page">
+    <a class="back-link" href="/">← Back home</a>
+    <section class="page-intro"><p class="eyebrow">KOLKATA HR MADAM vs DELHI BOYFRIEND</p><h1>Long-distance, <em>short games.</em> 🎮</h1><p>Two tiny games. No download, no pressure. Just thodi masti from your Delhi wala. ♡</p></section>
+
+    <section class="game-card catch-card">
+      <div class="game-card-heading"><div><p class="eyebrow">GAME 01 / FAST FINGERS, CUTIE</p><h2>Catch my <em>flying hearts.</em></h2><p>Tap as many hearts as you can before 20 seconds are up!</p></div><span class="game-heading-emoji">💌</span></div>
+      <div class="catch-stats"><span>♥ Caught: <strong id="heart-score">0</strong></span><span>⏱ Time: <strong id="heart-timer">20</strong>s</span></div>
+      <div class="catch-arena" id="catch-arena" aria-label="Game area: tap the hearts as they appear">
+        <div class="arena-welcome" id="arena-welcome"><span>💗</span><p>Ready, Kolkata?</p><small>Fastest fingers in HR. Prove it.</small><button class="button button-primary" id="start-catch" type="button">Start catching <span>→</span></button></div>
+        <p class="catch-finish" id="catch-finish" hidden aria-live="polite"></p>
+      </div>
+      <p class="game-footnote">🏆 High score saved on this device: <strong id="heart-best">0</strong></p>
+    </section>
+
+    <section class="game-card match-card">
+      <div class="game-card-heading"><div><p class="eyebrow">GAME 02 / HR MEMORY ROUND</p><h2>Match the <em>love emojis.</em></h2><p>Find all 6 pairs. Bonus points for that cute memory, madam.</p></div><span class="game-heading-emoji">🧠</span></div>
+      <div class="match-stats"><span>💌 Pairs: <strong id="match-pairs">0</strong>/6</span><span>🫂 Hugs sent: <strong id="hug-count">0</strong>/6</span><span>👆 Moves: <strong id="match-moves">0</strong></span></div>
+      <div class="hug-progress" id="hug-progress" role="progressbar" aria-label="Virtual hugs delivered" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><span id="hug-progress-bar"></span></div>
+      <p class="hug-status" id="hug-status" aria-live="polite">A match = one virtual hug from Delhi to Kolkata. Ready? 💌</p>
+      <div class="match-board" id="match-board" aria-label="Love emoji matching game"></div>
+      <div class="match-footer"><p class="match-message" id="match-message" aria-live="polite">Flip two cards. Let's see that HR memory!</p><button class="button button-outline" id="restart-match" type="button">Shuffle cards <span>↻</span></button></div>
+      <section class="hug-celebration" id="hug-celebration" aria-live="polite" hidden>
+        <div class="hug-confetti" aria-hidden="true">✦　♡　✿　♡　✦</div>
+        <p class="eyebrow">ALL 6 HUGS DELIVERED</p>
+        <h3>Delhi <span>→</span> Kolkata<br><em>hug successfully delivered!</em></h3>
+        <p class="hug-love-copy">Distance ne try toh kiya. But look, you're together now. 🫂</p>
+        <div class="hug-photos" aria-label="A little Delhi-to-Kolkata couple hug">
+          <img src="/static/photos/delhi-boy.webp" alt="Your Delhi boy, sending his hug" loading="lazy">
+          <div class="hug-animation" aria-hidden="true"><span>🫂</span><i>♥</i></div>
+          <img src="/static/photos/megha-selfie.webp" alt="Megha in Kolkata, receiving her hug" loading="lazy">
+        </div>
+        <p class="hug-signoff">Tight squeeze, madam. Hold for 8 seconds. ♡</p>
+        <button class="button button-primary" id="play-again-match" type="button">One more hug? <span>💗</span></button>
+      </section>
+    </section>
+
+    <section class="tiny-note-card"><span>💌</span><p>Bas ek chhota sa reminder: <strong>Delhi se Kolkata, one giant virtual hug.</strong></p><button id="next-note" type="button" aria-label="Show another tiny love note">Another tiny note? ↗</button></section>
+    <footer class="site-footer"><span>Made with a ridiculous amount of love <b>♡</b></span><a href="/">A little corner for Megha Sinha</a></footer>
+  </main>
+  <script src="/static/script.js" defer></script>
+</body>
+</html>

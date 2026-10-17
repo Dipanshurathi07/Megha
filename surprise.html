@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8f4">
+  <title>A tiny surprise for Megha 🎁</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="/"><span class="brand-mark">m.</span><span>for Megha, <em>with love</em></span></a><nav class="site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/love">Love note</a><a href="/memories">Our scrapbook</a><a href="/game">Play a game</a><a href="/promise">For tough days</a><a href="/reasons">Reasons why</a><a href="/rate">Rate me</a><a href="/quiz">Love quiz</a><a class="active" href="/surprise">Surprise</a></nav><a class="header-pill" href="/question">A question <span>↗</span></a></header>
+  <main class="inner-page surprise-wrap">
+    <a class="back-link" href="/">← Back home</a>
+    <section class="gift-page-card">
+      <p class="eyebrow">A LITTLE SOMETHING, JUST FOR YOU</p><h1>Surprise, <em>Megha!</em></h1>
+      <p class="gift-intro">A rose for the girl who makes my whole world bloom. Tap to unwrap a little Delhi-to-Kolkata surprise. 🌹</p>
+      <button class="gift-button" id="gift-button" type="button" aria-label="Open your surprise gift"><span class="gift-bow" aria-hidden="true">🎀</span><span class="gift-box" aria-hidden="true">🎁</span><span class="gift-hint">Tap to open your gift</span></button>
+      <div class="gift-reveal" id="gift-reveal" hidden>
+        <div class="gift-reveal-heading"><div class="rose" aria-hidden="true">🌹</div><p class="eyebrow">DELHI SE KOLKATA, WITH LOVE</p><h2 tabindex="-1">For my favourite flower.</h2><p>This rose is pretty, but still not as pretty as you. I love you, Megha. ♡</p></div>
+        <div class="gift-scene" id="gift-scene" aria-label="A little animated hug between Megha and her Delhi boy">
+          <span class="gift-scene-city gift-scene-delhi">DELHI</span><span class="gift-scene-city gift-scene-kolkata">KOLKATA</span>
+          <div class="gift-hug-photos"><img src="/static/photos/delhi-boy.webp" alt="Your Delhi boy sending Megha a hug"><div class="gift-hug-heart" aria-hidden="true">🫂<span>♡</span></div><img src="/static/photos/megha-selfie.webp" alt="Megha receiving a virtual hug"></div>
+          <span class="gift-scene-caption" id="gift-scene-caption" aria-live="polite">A little hug is travelling from Delhi to Kolkata…</span>
+          <div class="gift-petals" id="gift-petals" aria-hidden="true"></div>
+        </div>
+        <button class="button button-outline gift-replay-button" id="gift-replay" type="button">Send another hug <span>🫂</span></button>
+        <div class="gift-tags"><span>one virtual rose 🌹</span><span>infinite hugs 🤗</span><span>your favourite snack 🍓</span></div>
+        <p class="gift-personal-note">Subah ki tumhari awaaz, tumhari pyaari aankhein, aur tumhara woh soft sa dil—Delhi wala in sab ko bahut miss karta hai. Jab tak milna nahi hota, yeh virtual hug rakh lo. 🤍</p>
+        <a class="button button-primary gift-love-link" href="/love">One more love note? <span>💌</span></a>
+      </div>
+      <p class="gift-footnote">No special occasion needed. You're the occasion. ♡</p>
+    </section>
+    <footer class="site-footer"><span>Made with a ridiculous amount of love <b>♡</b></span><a href="/">A little corner for Megha Sinha</a></footer>
+  </main>
+  <script src="/static/script.js" defer></script>
+</body>
+</html>

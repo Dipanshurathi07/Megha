@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8f4">
+  <meta name="description" content="An extremely official, very unserious boyfriend rating form for Megha.">
+  <title>Rate your boyfriend 💅</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="/"><span class="brand-mark">m.</span><span>for Megha, <em>with love</em></span></a><nav class="site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/love">Love note</a><a href="/memories">Our scrapbook</a><a href="/game">Play a game</a><a href="/promise">For tough days</a><a href="/reasons">Reasons why</a><a class="active" href="/rate">Rate me</a><a href="/quiz">Love quiz</a><a href="/surprise">Surprise</a></nav><a class="header-pill" href="/question">A question <span>↗</span></a></header>
+  <main class="inner-page rating-page">
+    <a class="back-link" href="/">← Back home</a>
+    <section class="page-intro"><p class="eyebrow">THE TOTALLY UNBIASED BOYFRIEND REVIEW BOARD</p><h1>Rate your <em>boyfriend.</em> 💅</h1><p>Megha, your honest (and legally non-binding) expert opinion is requested. Then plan our very cute Delhi–Kolkata reunion. 🤭</p></section>
+
+    <form class="rating-form" id="rating-form">
+      <section class="rating-panel" aria-labelledby="rating-heading">
+        <div class="rating-panel-heading"><div><p class="eyebrow">THE OFFICIAL SCORECARD</p><h2 id="rating-heading">Rate him out of 10.</h2></div><span class="rating-panel-sticker">jury = you ♡</span></div>
+        <div class="rating-list">
+          <div class="rating-item"><div class="rating-label-row"><label for="rating-looks"><span class="rating-emoji">😎</span> Looks</label><output for="rating-looks" id="output-looks">7/10</output></div><input class="rating-slider" id="rating-looks" name="looks" type="range" min="1" max="10" value="7" data-rating><div class="rating-scale"><span>needs better lighting</span><span>unfairly handsome</span></div></div>
+          <div class="rating-item"><div class="rating-label-row"><label for="rating-nature"><span class="rating-emoji">🫶</span> Nature / dil ka haal</label><output for="rating-nature" id="output-nature">8/10</output></div><input class="rating-slider" id="rating-nature" name="nature" type="range" min="1" max="10" value="8" data-rating><div class="rating-scale"><span>thoda sa drama</span><span>green-flag material</span></div></div>
+          <div class="rating-item"><div class="rating-label-row"><label for="rating-naughty"><span class="rating-emoji">🤭</span> Naughty level</label><output for="rating-naughty" id="output-naughty">6/10</output></div><input class="rating-slider" id="rating-naughty" name="naughty" type="range" min="1" max="10" value="6" data-rating><div class="rating-scale"><span>seedha-saadha (allegedly)</span><span>shararat department</span></div></div>
+          <div class="rating-item"><div class="rating-label-row"><label for="rating-shy"><span class="rating-emoji">🫣</span> Shy / blush-o-meter</label><output for="rating-shy" id="output-shy">5/10</output></div><input class="rating-slider" id="rating-shy" name="shy" type="range" min="1" max="10" value="5" data-rating><div class="rating-scale"><span>full confidence</span><span>compliment pe laal</span></div></div>
+          <div class="rating-item"><div class="rating-label-row"><label for="rating-chaos"><span class="rating-emoji">🌀</span> Chaos level</label><output for="rating-chaos" id="output-chaos">7/10</output></div><input class="rating-slider" id="rating-chaos" name="chaos" type="range" min="1" max="10" value="7" data-rating><div class="rating-scale"><span>calendar invite human</span><span>plot twist person</span></div></div>
+          <div class="rating-item"><div class="rating-label-row"><label for="rating-anger"><span class="rating-emoji">😤</span> Anger / gussa meter</label><output for="rating-anger" id="output-anger">4/10</output></div><input class="rating-slider" id="rating-anger" name="anger" type="range" min="1" max="10" value="4" data-rating><div class="rating-scale"><span>shaant sa santa</span><span>buffering mein volcano</span></div></div>
+        </div>
+      </section>
+
+      <section class="rapid-fire-panel" aria-labelledby="rapid-heading">
+        <div class="rating-panel-heading"><div><p class="eyebrow">BONUS ROUND: BLUSH CONFESSIONS</p><h2 id="rapid-heading">Naughty questions… 🤭</h2></div><span class="rating-panel-sticker">only cute answers 😉</span></div>
+        <p class="meet-intro">Thodi si flirting, thodi si sharam—skip karna ho toh bilkul okay. Real life mein comfort first, always. 💌</p>
+        <fieldset class="rapid-question"><legend>Video call pe kaun zyada der tak aankhon mein dekhega?</legend><label class="choice-chip"><input type="radio" name="flirtyStare" value="him"><span>Main—full confidence (maybe) 😎</span></label><label class="choice-chip"><input type="radio" name="flirtyStare" value="megha"><span>Megha, phir mujhe blush karayegi 👀</span></label><label class="choice-chip"><input type="radio" name="flirtyStare" value="both"><span>Dono has padenge pehle 🤭</span></label></fieldset>
+        <fieldset class="rapid-question"><legend>Flirty message pe pehle blush kaun karega?</legend><label class="choice-chip"><input type="radio" name="firstBlush" value="him"><span>Delhi wala, caught red-handed 🫣</span></label><label class="choice-chip"><input type="radio" name="firstBlush" value="megha"><span>Megha, but she’ll deny it 🌷</span></label><label class="choice-chip"><input type="radio" name="firstBlush" value="both"><span>Both—screenshots are evidence 📸</span></label></fieldset>
+        <fieldset class="rapid-question"><legend>“Bas ek aur minute baat karo” kaun bolega?</legend><label class="choice-chip"><input type="radio" name="oneMoreMinute" value="him"><span>Main, call end karne ka mann nahi 🥺</span></label><label class="choice-chip"><input type="radio" name="oneMoreMinute" value="megha"><span>Megha, secretly missing me already 😉</span></label><label class="choice-chip"><input type="radio" name="oneMoreMinute" value="both"><span>Dono—goodnight gets delayed 💌</span></label></fieldset>
+        <fieldset class="rapid-question"><legend>Thoda naughty tease ho toh best comeback?</legend><label class="choice-chip"><input type="radio" name="teaseComeback" value="flirt"><span>Ek aur flirty line—if the mood is right 😏</span></label><label class="choice-chip"><input type="radio" name="teaseComeback" value="blush"><span>Shy smile, then topic change 🫣</span></label><label class="choice-chip"><input type="radio" name="teaseComeback" value="stop"><span>“Bas, HR warning!” and I’ll stop 😄</span></label></fieldset>
+      </section>
+
+      <section class="first-meet-panel" aria-labelledby="meet-heading">
+        <div class="rating-panel-heading"><div><p class="eyebrow">DELHI × KOLKATA: THE REUNION EPISODE</p><h2 id="meet-heading">When we finally meet… 🥹</h2></div><span class="rating-panel-sticker">your scene, your rules ♡</span></div>
+        <p class="meet-intro">Choose your dream version. No pressure, no fixed script—real life mein jo dono ko comfortable lage, wahi perfect. 🤍</p>
+        <fieldset class="rapid-question"><legend>First reaction when you spot me?</legend><label class="choice-chip"><input type="radio" name="arrival" value="hug"><span>A big hug (if we both want) 🫂</span></label><label class="choice-chip"><input type="radio" name="arrival" value="blush"><span>Shy smile &amp; blush 🫣</span></label><label class="choice-chip"><input type="radio" name="arrival" value="gussa"><span>“Itni der laga di!” wala cute gussa 😤</span></label><label class="choice-chip"><input type="radio" name="arrival" value="hands"><span>Hold hands and grin 🤝</span></label></fieldset>
+        <fieldset class="rapid-question"><legend>First hug ka initiative kaun lega?</legend><label class="choice-chip"><input type="radio" name="firstHug" value="him"><span>Main, arms open 😄</span></label><label class="choice-chip"><input type="radio" name="firstHug" value="megha"><span>Megha, surprise hug attack 🫂</span></label><label class="choice-chip"><input type="radio" name="firstHug" value="both"><span>Dono ek saath—filmy collision 🤭</span></label><label class="choice-chip"><input type="radio" name="firstHug" value="ask"><span>Pehle “hug?” poochhenge, comfort first 🤍</span></label></fieldset>
+        <fieldset class="rapid-question"><legend>First kiss kaun initiate karega—if we both want one?</legend><label class="choice-chip"><input type="radio" name="kiss" value="him"><span>Main pehle poochhunga 💌</span></label><label class="choice-chip"><input type="radio" name="kiss" value="megha"><span>Megha signal degi 😉</span></label><label class="choice-chip"><input type="radio" name="kiss" value="both"><span>Mutual moment, mutual yes 💋</span></label><label class="choice-chip"><input type="radio" name="kiss" value="later"><span>First meet pe no pressure, baad mein dekhenge 🤍</span></label></fieldset>
+        <fieldset class="rapid-question"><legend>First meal together—kaun kiske liye banayega?</legend><label class="choice-chip"><input type="radio" name="cooking" value="him"><span>Main Megha ke liye (taste-test mandatory) 👨‍🍳</span></label><label class="choice-chip"><input type="radio" name="cooking" value="megha"><span>Megha mere liye, main sous-chef 😇</span></label><label class="choice-chip"><input type="radio" name="cooking" value="together"><span>Saath mein banayenge; kitchen chaos included 🍝</span></label><label class="choice-chip"><input type="radio" name="cooking" value="order"><span>Order karenge—date hai, cooking exam nahi 😋</span></label></fieldset>
+        <fieldset class="rapid-question"><legend>Shy / blush kaun zyada hoga?</legend><label class="choice-chip"><input type="radio" name="shyOne" value="him"><span>Main, especially eye contact pe 🫣</span></label><label class="choice-chip"><input type="radio" name="shyOne" value="megha"><span>Megha, cute si smile ke saath 🌷</span></label><label class="choice-chip"><input type="radio" name="shyOne" value="both"><span>Dono—awkward silence but adorable 🤭</span></label></fieldset>
+        <fieldset class="rapid-question"><legend>Chipkega kaun zyada? 😏</legend><label class="choice-chip"><input type="radio" name="clingy" value="him"><span>Main, hug quota pending hai 🫂</span></label><label class="choice-chip"><input type="radio" name="clingy" value="megha"><span>Megha, but only if she wants 😉</span></label><label class="choice-chip"><input type="radio" name="clingy" value="both"><span>Dono equally clingy—mutual attachment 🤍</span></label><label class="choice-chip"><input type="radio" name="clingy" value="space"><span>Thoda space, phir apni marzi se paas 🌿</span></label></fieldset>
+        <fieldset class="rapid-question"><legend>Playful gussa kis baat pe banta hai?</legend><label class="choice-chip"><input type="radio" name="tease" value="late"><span>“Late kyun aaye?” 😤</span></label><label class="choice-chip"><input type="radio" name="tease" value="tease"><span>Too much teasing, HR complaint filed 🤭</span></label><label class="choice-chip"><input type="radio" name="tease" value="none"><span>No gussa, bas extra-long hug ♡</span></label></fieldset>
+        <fieldset class="rapid-question"><legend>First date ka scene?</legend><label class="choice-chip"><input type="radio" name="date" value="food"><span>Kolkata treats &amp; lots of talking 🍰</span></label><label class="choice-chip"><input type="radio" name="date" value="walk"><span>Slow walk, hand in hand (if comfy) 🌆</span></label><label class="choice-chip"><input type="radio" name="date" value="coffee"><span>Cosy café and eye-contact challenge ☕</span></label></fieldset>
+      </section>
+
+      <div class="rating-submit-row"><p>Entirely for giggles. No marks are stored or sent anywhere. ♡</p><button class="button button-primary" type="submit">Reveal his very official report <span>✨</span></button></div>
+    </form>
+
+    <section class="rating-result" id="rating-result" aria-live="polite" hidden>
+      <div class="result-confetti" aria-hidden="true">✦　♡　✿　♡　✦</div>
+      <p class="eyebrow">THE COMMITTEE HAS REACHED A VERDICT</p><h2>Megha's Boyfriend Report™</h2>
+      <div class="result-score"><span id="result-score">7.0</span><small>/10</small></div>
+      <p class="result-verdict" id="result-verdict"></p>
+      <div class="result-breakdown" id="result-breakdown"></div>
+      <p class="result-rapid" id="result-rapid"></p>
+      <section class="meet-reveal" aria-labelledby="meet-reveal-heading">
+        <div class="meet-reveal-photos" aria-hidden="true"><img src="/static/photos/delhi-boy.webp" alt=""><span>♡</span><img src="/static/photos/megha-selfie.webp" alt=""></div>
+        <p class="eyebrow">A LITTLE PREVIEW OF US</p><h3 id="meet-reveal-heading">Our first-meet daydream 💌</h3>
+        <p id="meet-reveal-text"></p>
+        <p class="meet-reveal-note">And for the real-life version: we’ll check in, take it at our own pace, and make sure we both feel happy and comfortable. 🤍</p>
+      </section>
+      <div class="result-actions"><button class="button button-primary" id="share-rating" type="button">Share my verdict <span>↗</span></button><button class="button button-outline" id="edit-rating" type="button">Appeal / edit marks <span>↺</span></button></div>
+      <p class="share-status" id="share-status" aria-live="polite"></p>
+    </section>
+    <footer class="site-footer"><span>Made with a ridiculous amount of love <b>♡</b></span><a href="/">A little corner for Megha Sinha</a></footer>
+  </main>
+  <script src="/static/script.js" defer></script>
+</body>
+</html>
