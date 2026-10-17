@@ -1,4 +1,4 @@
-(() => {
+(async () => {
   const authCard = document.querySelector("#album-auth-card");
   if (!authCard) return;
 
@@ -24,14 +24,35 @@
     "image/jpeg", "image/png", "image/webp", "image/gif",
     "video/mp4", "video/webm", "video/quicktime"
   ]);
-  const config = window.MEGHA_ALBUM_CONFIG;
+  if (!window.supabase) {
+    throw new Error("The Supabase browser library did not load. Check your internet connection and refresh.");
+  }
 
-  if (!window.supabase || !config?.supabaseUrl || !config?.supabaseAnonKey
-      || config.supabaseUrl.includes("YOUR_PROJECT_ID")
-      || config.supabaseAnonKey.includes("YOUR_SUPABASE")) {
-    authCopy.textContent = "Shared album setup is not finished yet. Follow the Supabase setup steps in the project README, then add your project URL and publishable/anon key in static/supabase-config.js.";
-    authStatus.textContent = "The rest of the scrapbook still works. No upload data leaves this page until you connect your own private Supabase project.";
-    return;
+  const configResponse = await fetch("/api/config", {
+    headers: { Accept: "application/json" }
+  });
+  const contentType = configResponse.headers.get("content-type") || "";
+  if (!contentType.toLowerCase().includes("application/json")) {
+    const responseBody = (await configResponse.text()).replace(/\s+/g, " ").slice(0, 160);
+    const requestUrl = new URL("/api/config", window.location.href);
+    throw new Error(
+      `GET ${requestUrl.href} returned HTTP ${configResponse.status} (${contentType || "unknown content type"}), not JSON. Response: ${responseBody || "(empty response)"}`
+    );
+  }
+
+  let config;
+  try {
+    config = await configResponse.json();
+  } catch (error) {
+    throw new Error(`GET /api/config returned invalid JSON: ${error.message}`);
+  }
+
+  if (!configResponse.ok || !config.configured) {
+    throw new Error(config.message || "Supabase is not configured on this server.");
+  }
+
+  if (!config.supabaseUrl || !config.supabaseAnonKey) {
+    throw new Error("Supabase URL or publishable key is missing from the server configuration.");
   }
 
   const supabaseClient = window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey);
@@ -354,4 +375,13 @@
       showAuthMessage(membershipError.message, true);
     }
   });
-})();
+})().catch((error) => {
+  const authCopy = document.querySelector("#album-auth-copy");
+  const authStatus = document.querySelector("#album-auth-status");
+  if (!authStatus) return;
+  if (authCopy) {
+    authCopy.textContent = "The rest of the scrapbook still works; the shared album needs its Supabase configuration.";
+  }
+  authStatus.textContent = error.message;
+  authStatus.classList.add("is-error");
+});
