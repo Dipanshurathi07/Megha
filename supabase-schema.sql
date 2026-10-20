@@ -30,6 +30,10 @@ $$;
 alter table public.album_members enable row level security;
 alter table public.album_memories enable row level security;
 
+grant usage on schema public to authenticated;
+grant select on public.album_members to authenticated;
+grant select, insert, delete on public.album_memories to authenticated;
+
 drop policy if exists "Album members can see their membership" on public.album_members;
 create policy "Album members can see their membership"
   on public.album_members for select to authenticated

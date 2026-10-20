@@ -60,6 +60,8 @@
   let activeUserId;
   let albumChannel;
   let loadingLibrary = false;
+  let deletingMemory = false;
+  let albumReloadQueued = false;
 
   const showAuthMessage = (message, isError = false) => {
     authStatus.textContent = message;
@@ -124,8 +126,13 @@
   };
 
   const loadAlbum = async () => {
-    if (!currentUser || loadingLibrary) return;
+    if (!currentUser) return;
+    if (loadingLibrary || deletingMemory) {
+      albumReloadQueued = true;
+      return;
+    }
     loadingLibrary = true;
+    albumReloadQueued = false;
     refreshButton.disabled = true;
     itemCount.textContent = "Loading…";
     try {
@@ -184,6 +191,10 @@
         return card;
       }));
 
+      if (deletingMemory) {
+        albumReloadQueued = true;
+        return;
+      }
       albumGrid.replaceChildren(...cards);
       itemCount.textContent = `${memories.length} ${memories.length === 1 ? "moment" : "moments"}`;
       albumEmpty.hidden = memories.length > 0;
@@ -194,36 +205,45 @@
     } finally {
       refreshButton.disabled = false;
       loadingLibrary = false;
+      if (albumReloadQueued && !deletingMemory && currentUser) {
+        albumReloadQueued = false;
+        window.setTimeout(loadAlbum, 0);
+      }
     }
   };
 
   const deleteMemory = async (memory, button) => {
+    if (deletingMemory) return;
     if (!window.confirm("Delete this shared memory for both of you? This can't be undone.")) return;
+    deletingMemory = true;
     button.disabled = true;
     showUploadMessage("Removing this memory…");
     try {
-      const { error: rowError } = await supabaseClient
+      const { data: deletedRows, error: rowError } = await supabaseClient
         .from("album_memories")
         .delete()
-        .eq("id", memory.id);
-      if (rowError) {
-        button.disabled = false;
-        showUploadMessage(`Couldn't delete this memory: ${rowError.message}`, true);
-        return;
+        .eq("id", memory.id)
+        .select("id");
+      if (rowError) throw rowError;
+      if (!deletedRows?.length) {
+        throw new Error("No album record was deleted. Check the Supabase DELETE grant and member policy, then refresh.");
       }
 
       const { error: fileError } = await supabaseClient
         .storage.from("couple-album")
         .remove([memory.storage_path]);
       if (fileError) {
-        showUploadMessage(`The memory was removed from the album, but its stored file couldn't be cleaned up: ${fileError.message}`, true);
+        showUploadMessage(`The memory was removed from the album, but its stored file couldn't be deleted: ${fileError.message}`, true);
       } else {
         showUploadMessage("Memory deleted from your shared album. ♡");
       }
-      await loadAlbum();
     } catch (error) {
-      button.disabled = false;
       showUploadMessage(`Couldn't finish deleting this memory: ${error.message}`, true);
+    } finally {
+      deletingMemory = false;
+      button.disabled = false;
+      albumReloadQueued = true;
+      await loadAlbum();
     }
   };
 

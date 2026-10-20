@@ -26,6 +26,7 @@ PAGES = {
     "game": "game.html",
     "promise": "promise.html",
     "sorry": "sorry.html",
+    "garba": "garba.html",
 }
 
 SUPABASE_URL = os.getenv("SUPABASE_URL", "").strip()
