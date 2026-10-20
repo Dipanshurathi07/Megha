@@ -2,7 +2,7 @@
 
 A small Flask website with a private, shared photo/video scrapbook. Album media is stored in a private Supabase Storage bucket, not in browser-local storage.
 
-The site opens on a video hello for Megha at `/`. The original multi-page love menu remains at `/home`; the looping intro video is bundled at `static/videos/megha-miss-you.mp4`.
+The site opens on a video hello for Megha at `/`. The original multi-page love menu remains at `/home`, with a dedicated apology note at `/sorry`; the looping intro video is bundled at `static/videos/megha-miss-you.mp4`.
 
 ## Configure Supabase
 
@@ -49,7 +49,7 @@ python app.py
 If `.env` already exists, don't overwrite it with `Copy-Item`; just verify its two values. In another PowerShell window, confirm all existing pages and static assets still respond, and check the safe config endpoint without printing the key:
 
 ```powershell
-$pages = @("/", "/love", "/question", "/memories", "/reasons", "/surprise", "/quiz", "/rate", "/game", "/promise", "/static/album.js")
+$pages = @("/", "/love", "/question", "/memories", "/reasons", "/surprise", "/quiz", "/rate", "/game", "/promise", "/sorry", "/static/album.js")
 $pages | ForEach-Object {
   $response = Invoke-WebRequest "http://127.0.0.1:8000$_" -UseBasicParsing
   "{0} {1}" -f $response.StatusCode, $_

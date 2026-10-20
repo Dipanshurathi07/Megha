@@ -25,6 +25,7 @@ PAGES = {
     "rate": "rate.html",
     "game": "game.html",
     "promise": "promise.html",
+    "sorry": "sorry.html",
 }
 
 SUPABASE_URL = os.getenv("SUPABASE_URL", "").strip()

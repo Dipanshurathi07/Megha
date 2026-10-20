@@ -146,6 +146,54 @@ a:focus-visible, button:focus-visible { outline: 3px solid #d88c98; outline-offs
 .site-footer b { color: var(--rose); }
 .site-footer a { color: #a48f85; }
 
+.feature-sorry { background: linear-gradient(135deg, #fbe8ec, #f7eef6); }
+
+.sorry-page { min-height: 100vh; color: #fff8f6; background: #21131f; }
+.sorry-scene { position: relative; min-height: 100vh; min-height: 100svh; overflow: hidden; display: flex; flex-direction: column; align-items: center; padding: 76px 20px 20px; isolation: isolate; background: radial-gradient(ellipse at 50% 43%, #593047 0, #352038 38%, #21131f 76%); }
+.sorry-aurora, .sorry-aurora::before, .sorry-aurora::after { position: absolute; z-index: -1; inset: -20%; pointer-events: none; }
+.sorry-aurora { background: radial-gradient(ellipse at 24% 29%, rgb(224 116 146 / 19%), transparent 35%), radial-gradient(ellipse at 79% 66%, rgb(151 114 212 / 19%), transparent 35%); animation: sorry-aurora 16s ease-in-out infinite alternate; }
+.sorry-aurora::before, .sorry-aurora::after { content: ""; border: 1px solid rgb(255 222 231 / 9%); border-radius: 50%; }
+.sorry-aurora::before { inset: 14% 23%; transform: rotate(-24deg); }
+.sorry-aurora::after { inset: 24% 16%; transform: rotate(31deg); }
+.sorry-back { position: absolute; z-index: 1; top: 27px; left: max(24px, calc((100% - 960px) / 2)); display: inline-flex; align-items: center; gap: 9px; color: rgb(255 244 246 / 77%); font-size: 11px; font-weight: 600; transition: color .2s, transform .2s; }
+.sorry-back:hover { color: #fff; transform: translateX(-3px); }
+.sorry-back span { color: #ffb1c4; font-size: 16px; }
+.sorry-card { width: min(100%, 590px); margin-block: auto; padding: clamp(30px, 6vw, 55px) clamp(23px, 7vw, 66px) 34px; border: 1px solid rgb(255 229 236 / 20%); border-radius: 30px; background: linear-gradient(145deg, rgb(255 245 248 / 11%), rgb(255 255 255 / 5%)); box-shadow: 0 28px 100px rgb(8 3 11 / 38%), inset 0 1px rgb(255 255 255 / 13%); text-align: center; backdrop-filter: blur(18px); animation: sorry-arrive .9s cubic-bezier(.2,.8,.2,1) both; }
+.sorry-eyebrow { display: flex; align-items: center; justify-content: center; gap: 11px; margin: 0; color: rgb(255 232 237 / 72%); font-size: 9px; font-weight: 700; letter-spacing: .17em; }
+.sorry-eyebrow i { color: #ff9eb6; font-size: 13px; font-style: normal; }
+.sorry-envelope { width: 74px; height: 74px; margin: 27px auto 14px; display: grid; place-items: center; border: 1px solid rgb(255 255 255 / 17%); border-radius: 25px; background: linear-gradient(145deg, rgb(255 213 223 / 21%), rgb(225 159 202 / 9%)); box-shadow: 0 10px 35px rgb(12 4 13 / 22%); animation: sorry-pulse 3s ease-in-out infinite; }
+.sorry-envelope span { font-size: 34px; filter: drop-shadow(0 5px 12px rgb(255 119 151 / 32%)); }
+.sorry-kicker { margin: 0; color: #ffbfcc; font-family: "Playfair Display", Georgia, serif; font-size: 13px; font-style: italic; }
+.sorry-card h1 { margin: 12px 0 15px; color: #fff9f7; font-family: "Playfair Display", Georgia, serif; font-size: clamp(43px, 9vw, 67px); font-weight: 500; line-height: .99; letter-spacing: -.05em; text-shadow: 0 5px 30px rgb(8 2 10 / 25%); }
+.sorry-card h1 em { color: #ffb0c0; font-weight: 500; }
+.sorry-divider { display: flex; align-items: center; justify-content: center; gap: 13px; margin: 21px 0; color: #ffadc0; font-size: 14px; }
+.sorry-divider span { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, rgb(255 198 211 / 63%)); }
+.sorry-divider span:last-child { transform: rotate(180deg); }
+.sorry-note { margin: 0; color: rgb(255 246 246 / 91%); font-size: 13px; line-height: 1.95; }
+.sorry-note strong { color: #ffc2ce; font-weight: 700; }
+.sorry-note-soft { margin-top: 13px; color: rgb(255 240 243 / 75%); }
+.sorry-signoff { margin: 23px 0 0; color: #ffd0d9; font-family: "Playfair Display", Georgia, serif; font-size: 14px; font-style: italic; }
+.sorry-signoff span { color: #ff9eb6; }
+.sorry-home { min-height: 47px; display: inline-flex; align-items: center; justify-content: center; gap: 11px; margin-top: 25px; padding: 0 20px; border: 1px solid rgb(255 240 244 / 47%); border-radius: 999px; color: #4d2638; background: linear-gradient(100deg, #fff0f1, #ffe0e7); box-shadow: 0 8px 25px rgb(12 4 13 / 20%); font-size: 11px; font-weight: 700; transition: transform .2s, box-shadow .2s; }
+.sorry-home:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgb(12 4 13 / 32%); }
+.sorry-home span { font-size: 16px; }
+.sorry-signature { margin: 18px 0 0; color: rgb(255 232 236 / 62%); font-family: "Playfair Display", Georgia, serif; font-size: 11px; font-style: italic; }
+.sorry-stars span { position: absolute; z-index: -1; color: rgb(255 204 218 / 66%); font-size: 22px; animation: sorry-drift 7s ease-in-out infinite; }
+.sorry-stars span:nth-child(1) { top: 14%; left: 14%; }
+.sorry-stars span:nth-child(2) { top: 24%; right: 15%; color: #eec1ce; animation-delay: -2s; font-size: 16px; }
+.sorry-stars span:nth-child(3) { top: 64%; left: 9%; animation-delay: -4s; font-size: 17px; }
+.sorry-stars span:nth-child(4) { top: 73%; right: 12%; animation-delay: -1s; }
+.sorry-stars span:nth-child(5) { top: 87%; left: 27%; animation-delay: -3s; font-size: 15px; }
+.sorry-stars span:nth-child(6) { top: 10%; right: 34%; animation-delay: -5s; font-size: 13px; }
+.sorry-stars span:nth-child(7) { top: 43%; right: 7%; animation-delay: -2.5s; font-size: 18px; }
+.sorry-stars span:nth-child(8) { top: 40%; left: 6%; animation-delay: -4.5s; font-size: 14px; }
+.sorry-footer { margin: 22px 0 0; color: rgb(255 239 242 / 58%); font-family: "Playfair Display", Georgia, serif; font-size: 10px; font-style: italic; text-align: center; }
+.sorry-footer span { padding-left: 5px; color: #ffadc0; }
+@keyframes sorry-arrive { from { opacity: 0; transform: translateY(20px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes sorry-pulse { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-5px) rotate(2deg); } }
+@keyframes sorry-drift { 0%, 100% { opacity: .44; transform: translate3d(0, 0, 0) rotate(-8deg); } 50% { opacity: 1; transform: translate3d(8px, -17px, 0) rotate(8deg); } }
+@keyframes sorry-aurora { from { transform: translate3d(-2%, -1%, 0) scale(1); } to { transform: translate3d(2%, 1%, 0) scale(1.08); } }
+
 .inner-page { width: min(100% - 48px, 930px); margin: 35px auto 0; }
 .back-link { display: inline-flex; margin-bottom: 19px; color: #8d7870; font-size: 10px; font-weight: 700; }
 .back-link:hover { color: var(--rose-dark); }
