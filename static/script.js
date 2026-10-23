@@ -83,7 +83,8 @@ if (reasonButton) {
     ["💌", "One message from you = my Delhi day made."],
     ["🤭", "Even your thoda-sakht face is adorable."],
     ["🫶", "Distance: long. My soft spot for you: longer."],
-    ["🌷", "You, being exactly you. That's the whole reason."]
+    ["🌷", "You, being exactly you. That's the whole reason."],
+    ["💔", "Tu chali gayi, achha hai... tujhe mujhse bahut behtar mil gaya hoga. Bas ek baar wajah bata deti—main sirf itna hi chahta tha. Baaki, tu khush reh."]
   ];
   let current = 0;
   reasonButton.addEventListener("click", () => {
