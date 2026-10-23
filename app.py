@@ -16,6 +16,7 @@ app = Flask(__name__)
 
 PAGES = {
     "home": "index.html",
+    "goodbye": "welcome.html",
     "love": "love.html",
     "question": "question.html",
     "memories": "memories.html",

@@ -2,7 +2,7 @@
 
 A small Flask website with a private, shared photo/video scrapbook. Album media is stored in a private Supabase Storage bucket, not in browser-local storage.
 
-The site opens on a video hello for Megha at `/`. The original multi-page love menu remains at `/home`, with a dedicated apology note at `/sorry` and a Garba photo surprise at `/garba`; the looping intro video is bundled at `static/videos/megha-miss-you.mp4`.
+The site opens on a farewell note for Megha at `/` (also available at `/goodbye`). The original multi-page scrapbook menu remains at `/home`, with a dedicated apology note at `/sorry` and a Garba photo surprise at `/garba`; the looping intro video is bundled at `static/videos/megha-miss-you.mp4`.
 
 ## Configure Supabase
 
