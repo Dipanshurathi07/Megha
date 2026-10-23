@@ -71,18 +71,23 @@ a:focus-visible, button:focus-visible { outline: 3px solid #d88c98; outline-offs
 .spark-b { right: 17%; bottom: 185px; color: #d5985f; font-size: 21px; }
 .art-heart { top: 179px; right: 17%; font-family: Georgia, serif; font-size: 32px; transform: rotate(12deg); }
 .hero-photo-art { min-height: 430px; overflow: hidden; border-radius: 35px 35px 65px 35px; background: radial-gradient(ellipse at 30% 20%, #f9ddca, transparent 55%), linear-gradient(145deg, #f3dfd6, #fbebe6 60%, #f1dcd9); }
-.welcome-page { min-height: 100svh; overflow: hidden; color: #fffaf8; background: #24151d; }
+.welcome-page { min-height: 100svh; overflow-x: hidden; color: #fffaf8; background: #24151d; }
 .welcome-screen { position: relative; min-height: 100svh; min-height: 100dvh; display: grid; place-items: center; isolation: isolate; overflow: hidden; padding: 30px 20px; background: #24151d; }
 .welcome-video, .welcome-scrim { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; }
 .welcome-video { object-fit: cover; object-position: center 44%; }
-.welcome-scrim { z-index: -1; background: linear-gradient(180deg, rgb(25 14 22 / 34%), rgb(29 13 22 / 43%) 43%, rgb(23 12 18 / 76%)); }
-.welcome-message { width: min(100%, 540px); padding: 36px 30px; text-align: center; animation: welcome-arrive .9s both; }
+.welcome-scrim { z-index: -1; background: linear-gradient(180deg, rgb(25 14 22 / 48%), rgb(29 13 22 / 48%) 43%, rgb(23 12 18 / 78%)); }
+.welcome-message { width: min(100%, 650px); padding: clamp(30px, 5vw, 54px) clamp(22px, 6vw, 66px); border: 1px solid rgb(255 239 235 / 25%); border-radius: 30px; background: linear-gradient(145deg, rgb(47 31 41 / 77%), rgb(31 22 31 / 69%)); box-shadow: 0 30px 100px rgb(12 8 13 / 38%), inset 0 1px rgb(255 255 255 / 10%); backdrop-filter: blur(18px); text-align: center; animation: welcome-arrive .9s both; }
 .welcome-eyebrow { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0; color: rgb(255 246 243 / 83%); font-size: 10px; font-weight: 700; letter-spacing: .25em; }
 .welcome-eyebrow i { color: #ff9dad; font-size: 14px; font-style: normal; }
-.welcome-heart { margin-top: 36px; font-size: 35px; filter: drop-shadow(0 5px 15px rgb(255 119 151 / 35%)); animation: welcome-heartbeat 1.8s ease-in-out infinite; }
-.welcome-message h1 { margin: 12px 0 17px; font-family: "Playfair Display", Georgia, serif; font-size: clamp(57px, 10vw, 92px); font-weight: 500; line-height: .98; letter-spacing: -.055em; text-shadow: 0 4px 26px rgb(0 0 0 / 20%); }
+.welcome-heart { margin-top: 28px; color: #ffd3d5; font-size: 30px; filter: drop-shadow(0 5px 15px rgb(255 119 151 / 35%)); animation: welcome-float 5s ease-in-out infinite; }
+.welcome-message h1 { margin: 12px 0 22px; font-family: "Playfair Display", Georgia, serif; font-size: clamp(49px, 8vw, 76px); font-weight: 500; line-height: 1.04; letter-spacing: -.055em; text-shadow: 0 4px 26px rgb(0 0 0 / 20%); }
 .welcome-message h1 em { color: #ffb0ba; font-weight: 500; }
-.welcome-note { margin: 0; color: rgb(255 248 246 / 94%); font-size: clamp(14px, 2.4vw, 17px); line-height: 1.85; text-shadow: 0 2px 14px rgb(0 0 0 / 30%); }
+.welcome-note { margin: 0; color: rgb(255 248 246 / 96%); font-size: clamp(14px, 2.1vw, 16px); line-height: 1.9; text-shadow: 0 2px 14px rgb(0 0 0 / 30%); }
+.welcome-note-soft { color: rgb(255 239 235 / 82%); font-size: clamp(12px, 1.8vw, 14px); }
+.welcome-divider { display: flex; align-items: center; justify-content: center; gap: 13px; margin: 24px auto; color: #ffb0ba; }
+.welcome-divider span { width: 42px; height: 1px; background: linear-gradient(90deg, transparent, rgb(255 176 186 / 66%)); }
+.welcome-divider span:last-child { transform: rotate(180deg); }
+.welcome-divider i { font-size: 13px; font-style: normal; }
 .welcome-enter { min-height: 49px; display: inline-flex; align-items: center; justify-content: center; gap: 11px; margin-top: 30px; padding: 0 23px; border: 1px solid rgb(255 255 255 / 42%); border-radius: 999px; color: #57313b; background: #fff8f4; box-shadow: 0 10px 35px rgb(20 8 16 / 22%); font-size: 12px; font-weight: 700; transition: transform .2s, background .2s, box-shadow .2s; }
 .welcome-enter:hover { transform: translateY(-3px); background: #fff; box-shadow: 0 14px 40px rgb(20 8 16 / 30%); }
 .welcome-enter span { color: var(--rose); font-size: 17px; }
@@ -693,6 +698,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid #d88c98; outline-offs
 @keyframes welcome-heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
 @keyframes welcome-float { 0%, 100% { opacity: .5; transform: translateY(0) rotate(-8deg); } 50% { opacity: 1; transform: translateY(-13px) rotate(8deg); } }
 
+@media (prefers-reduced-motion: reduce) {
+  .welcome-message, .welcome-heart, .welcome-sparkles span { animation: none; }
+}
+
 @media (min-width: 1400px) {
   .home-hero { min-height: 550px; }
   .hero-art { min-height: 445px; }
@@ -710,14 +719,17 @@ a:focus-visible, button:focus-visible { outline: 3px solid #d88c98; outline-offs
 }
 @media (max-width: 600px) {
   body { background: #fff9f5; }
-  .welcome-screen { padding: 18px 12px; }
+  .welcome-screen { min-height: 100svh; padding: 26px 14px 54px; }
   .welcome-video { object-position: center; }
-  .welcome-message { padding: 30px 14px; }
-  .welcome-heart { margin-top: 29px; font-size: 31px; }
-  .welcome-message h1 { margin-top: 11px; font-size: clamp(56px, 16vw, 78px); }
-  .welcome-note { font-size: 13px; }
-  .welcome-enter { min-height: 46px; margin-top: 24px; padding: 0 18px; font-size: 11px; }
-  .welcome-signoff { margin-top: 16px; font-size: 11px; }
+  .welcome-message { padding: 31px 21px 28px; border-radius: 24px; backdrop-filter: blur(12px); }
+  .welcome-eyebrow { gap: 8px; font-size: 8px; letter-spacing: .16em; }
+  .welcome-heart { margin-top: 22px; font-size: 27px; }
+  .welcome-message h1 { margin: 10px 0 18px; font-size: clamp(43px, 11vw, 58px); }
+  .welcome-note { font-size: 13px; line-height: 1.8; }
+  .welcome-note-soft { font-size: 12px; }
+  .welcome-divider { margin: 18px auto; }
+  .welcome-enter { min-height: 46px; margin-top: 22px; padding: 0 18px; font-size: 11px; }
+  .welcome-signoff { margin-top: 15px; font-size: 11px; }
   .welcome-video-note { right: 12px; bottom: 11px; font-size: 8px; }
   .welcome-sparkles span:nth-child(1) { top: 16%; left: 7%; }
   .welcome-sparkles span:nth-child(2) { top: 22%; right: 7%; }
@@ -725,9 +737,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid #d88c98; outline-offs
   .welcome-sparkles span:nth-child(4) { bottom: 18%; left: 7%; }
   .site-header { width: calc(100% - 32px); min-height: 76px; gap: 7px; }
   .brand { gap: 7px; font-size: 11px;   }
-  @media (prefers-reduced-motion: reduce) {
-    .welcome-message, .welcome-heart, .welcome-sparkles span { animation: none; }
-  }
   .brand-mark { width: 30px; height: 30px; font-size: 17px; }
   .header-pill { padding: 8px 11px; font-size: 9px; }
   .site-nav { gap: 21px; margin: 1px 0 0; }
